@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="main-container">
+
+        <form action="/" method="post">
+            <div class="search-bar">
+                <input type="text" name="cityInput" placeholder="Another location">
+                <button class="search-btn" type="submit">
+                    <img src="images/magnifying-glass-solid.svg" alt="">
+                </button>
+            </div>
+        </form>
+        <div class="search-result-container">
+            <div class="weather-display">
+                <p class="temp-deg">35°</p>
+                <p class="city-name">Barhi</p>
+                <div class="weather-description flex-col">
+                    <img class="weather-icon" src="images/sun.png" alt="">
+                    <p class="weather-condition">Sunny</p>
+                </div>
+            </div>
+            <div class="weather-details">
+                <div>
+                    <p class="key">Feels-like</p>
+                    <p class="feels-like">35</p>
+                </div>
+                <div>
+                    <p class="key">Wind</p>
+                    <p class="wind">8 km/h</p>
+                </div>
+                <div>
+                    <p class="key">Humidity</p>
+                    <p class="humidity">90%</p>
+                </div>
+                <div>
+                    <p class="key">Pressure</p>
+                    <p class="pressure">8mm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <h1 class="brand">weatheryy</h1> -->
+
+</body>
+</html>
