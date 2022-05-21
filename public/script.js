@@ -17,21 +17,18 @@ displayWeather();
 function displayWeather() {
   btn.addEventListener("click", () => {
     let locationInput = document.getElementById("search-input").value;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${locationInput}&appid=f3ce309b3b5e2cfe81908910e4a0c1ba&units=metric`;
 
-    // Sending location to server side js file throught fetch POST.
-    fetch("/weather", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        location: locationInput,
-      }),
-    })
-      .then((res) => res.json())
+    fetch(url)
+      .then((response) => {
+        if (response.status !== 200) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         const weatherData = data;
+        
         cityName.textContent = weatherData.name;
         weatherCondition.textContent = weatherData.weather[0].main;
         weatherTemp.textContent = weatherData.main.temp;
@@ -66,15 +63,18 @@ function displayWeather() {
         if (weatherData.weather[0].id == 800) {
           weatherIcon.src = "https://openweathermap.org/img/wn/01d@2x.png";
         }
-      });
+      })
+      .catch((err) => {
+        alert("Error: City not found");
+      })
   });
 }
 
 // Function for displaying default weather when the site loads.
 function displayDefaultWeather() {
-  fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=new+delhi&appid=f3ce309b3b5e2cfe81908910e4a0c1ba&units=metric"
-  )
+  let defaultUrl = `https://api.openweathermap.org/data/2.5/weather?q=new+delhi&appid=f3ce309b3b5e2cfe81908910e4a0c1ba&units=metric`;
+
+  fetch(defaultUrl)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error(`HTTP error: ${response.status}`);
