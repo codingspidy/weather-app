@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  
     <script src="script.js" defer></script>
-</head>
-<body>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRI5Cy_bPU9e4xt6HLy11-F9mWM2jsbG0&libraries=places&callback=initAutocomplete" async defer></script> -->
+  </head>
+  <body>
+    <!-- <h1 class="brand">
+      <img src="images/weather-app-logo.png" alt="" />
+    </h1> -->
     <div class="main-container">
-
-        <form action="/" method="post">
-            <div class="search-bar">
-                <input type="text" name="cityInput" placeholder="Another location">
-                <button class="search-btn" type="submit">
-                    <img src="images/magnifying-glass-solid.svg" alt="">
-                </button>
-            </div>
-        </form>
-        <div class="search-result-container">
-            <div class="weather-display">
-                <p class="temp-deg">35°</p>
-                <p class="city-name">Barhi</p>
-                <div class="weather-description flex-col">
-                    <img class="weather-icon" src="images/sun.png" alt="">
-                    <p class="weather-condition">Sunny</p>
-                </div>
-            </div>
-            <div class="weather-details">
-                <div>
-                    <p class="key">Feels-like</p>
-                    <p class="feels-like">35</p>
-                </div>
-                <div>
-                    <p class="key">Wind</p>
-                    <p class="wind">8 km/h</p>
-                </div>
-                <div>
-                    <p class="key">Humidity</p>
-                    <p class="humidity">90%</p>
-                </div>
-                <div>
-                    <p class="key">Pressure</p>
-                    <p class="pressure">8mm</p>
-                </div>
-            </div>
+      <div class="search-bar">
+        <input
+          class="search-input"
+          id="search-input"
+          type="text"
+          name="cityInput"
+          placeholder="Another location"
+        />
+        <button class="search-btn" id="search-btn" type="submit">
+          <img src="images/magnifying-glass-solid.svg" alt="" />
+        </button>
+      </div>
+      <div class="search-result-container">
+        <div class="weather-display">
+          <div class="temp-deg-div flex gap-sm">
+            <p class="temp-deg">33.09</p>
+            <span class="deg-symbol">°</span>
+          </div>
+          <p class="city-name">New Delhi</p>
+          <div class="weather-condition flex-col">
+            <img class="weather-icon" src="" alt="" />
+            <p class="condition">Haze</p>
+          </div>
         </div>
+        <div class="weather-details">
+          <div class="feels-like-div">
+            <p class="key">Feels-like</p>
+            <div class="flex">
+              <p class="feels-like m-right-sm value">32.93</p>
+              <span>°C</span>
+            </div>
+          </div>
+          <div class="wind-div">
+            <p class="key">Wind</p>
+            <div class="flex">
+              <p class="wind m-right-sm value">2.57</p>
+              <span>m/s</span>
+            </div>
+          </div>
+          <div class="humidity-div">
+            <p class="key">Humidity</p>
+            <div class="flex">
+              <p class="humidity m-right-sm value">35</p>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="description-div">
+            <p class="key">Description</p>
+            <p class="description value">haze</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- <h1 class="brand">weatheryy</h1> -->
-
-</body>
+  </body>
 </html>
